@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
+print("PORT:", os.getenv("PORT"))
 
 app = Flask(__name__)
 
@@ -56,4 +57,4 @@ def chat():
 if __name__ == "__main__":
     # app.run(debug=True)
     port = int(os.getenv("PORT", 5000))  # Use the PORT variable from the environment
-    app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=port,debug=False)
