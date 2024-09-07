@@ -54,4 +54,6 @@ def chat():
     return jsonify({"response": response})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(debug=True)
+    port = int(os.getenv("PORT", 5000))  # Use the PORT variable from the environment
+    app.run(host="0.0.0.0", port=port)
